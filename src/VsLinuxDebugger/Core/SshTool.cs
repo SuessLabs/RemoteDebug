@@ -199,6 +199,8 @@ namespace VsLinuxDebugger.Core
         return false;
       }
 
+      connInfo = _ssh.ConnectionInfo;
+
       try
       {
         _sftp = (_info.PrivateKeyEnabled && File.Exists(_info.PrivateKeyPath))
@@ -216,9 +218,9 @@ namespace VsLinuxDebugger.Core
         _scp.Connect();
       }
 
-      var _connectionInfo = _ssh.ConnectionInfo;
+      connInfo = _ssh.ConnectionInfo;
 
-      Logger.Output($"Connected to {_connectionInfo.Username}@{_connectionInfo.Host}:{_connectionInfo.Port} via SSH and {(_sftp != null ? "SFTP" : "SCP")}");
+      Logger.Output($"Connected to {connInfo.Username}@{connInfo.Host}:{connInfo.Port} via SSH and {(_sftp != null ? "SFTP" : "SCP")}");
 
       _isConnected = true;
 
@@ -300,7 +302,7 @@ namespace VsLinuxDebugger.Core
         // TODO: Rev1 - Iterate through each file and upload it via SCP client or SFTP.
         // TODO: Rev2 - Compress _localHost.OutputDirFullName, upload ZIP, and unzip it.
         // TODO: Rev3 - Allow for both SFTP and SCP as a backup. This separating connection to a new disposable class.
-        //// Logger.Output($"Connected to {_connectionInfo.Username}@{_connectionInfo.Host}:{_connectionInfo.Port} via SSH and {(_sftpClient != null ? "SFTP" : "SCP")}");
+        //// Logger.Output($"Connected to {connInfo.Username}@{connInfo.Host}:{connInfo.Port} via SSH and {(_sftpClient != null ? "SFTP" : "SCP")}");
 
         var srcDirInfo = new DirectoryInfo(sourceFolder);
         if (!srcDirInfo.Exists)
