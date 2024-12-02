@@ -188,7 +188,11 @@ namespace VsLinuxDebugger.Core
       string displayAdapter = "";
 
       if(_opts.RemoteDebugDisplayGui)
-        displayAdapter = "DISPLAY=:0";
+      {
+        displayAdapter = !string.IsNullOrWhiteSpace(_opts.RemoteDebugDisplayNumber) ?
+          $"DISPLAY={_opts.RemoteDebugDisplayNumber}" :
+          "DISPLAY=:0";
+      }
 
       if (_opts.UseSSHExeEnabled)
       {

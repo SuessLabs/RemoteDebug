@@ -12,6 +12,7 @@
     public bool LocalSwitchLinuxDbgOutput { get; set; }
 
     public bool RemoteDebugDisplayGui { get; set; }
+    public string RemoteDebugDisplayNumber { get; set; }
     public string RemoteDeployBasePath { get; set; }
     /// <summary>Full path to `dotnet` executable.</summary>
     public string RemoteDotNetPath { get; set; }
