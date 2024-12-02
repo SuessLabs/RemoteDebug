@@ -4,7 +4,16 @@
 
 This document contains the release information for the project.
 
-### 2.2.0
+### 2.3.0 - 2024-12-02
+
+Early patch release before Christmas break. Effort moving forward will be for the upcoming 3.0 release.
+
+* Fixed: Fix connection error when using SSH private key (PR #95, Issue #82)
+* Added: Setting that allows to change the remote X11 display number (PR #94)
+* Update: Bump System.Text.Json from 6.0.2 to 6.0.10 (PR #92)
+* Update: Documentation (PR #91)
+
+### 2.2.0 - 2024-03-08
 
 * Fixed: Support VS v17.9 (#79)
 * Update: SSH.NET to v2023.0.1
