@@ -110,6 +110,14 @@ The following steps are options if you wish to use an SSH Private Key. These ste
    3. If it does not exist, simply upload `id_rsa.pub` and rename it to, `authorized_keys`
 7. DONE!
 
+## Used By
+
+* [SuessLabs](https://suesslabs.com) and [Xeno Innovations](https://xenoinc.com)
+* [Wilderness Labs](https://github.com/WildernessLabs)
+* [Omnicell, Inc.](https://omnicell.com)
+
+_Want your name added? Reach out to us_
+
 ## Future Features
 
 * [ ] **Debugging:** Launching of GUI apps for remote debugging
